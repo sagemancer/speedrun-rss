@@ -56,12 +56,10 @@ def convert_json_to_rss(json_file, rss_file):
         verified_dates.add(date_verified)
 
         if date_verified > int(last_unix_check()):
-            parent_element = ET.SubElement(channel, "runs")
+            parent_element = ET.SubElement(channel, "run")
             ET.SubElement(parent_element, "video").text = run['video']
             ET.SubElement(parent_element, "time").text = get_accurate_time(run['time'])
             rss_update = True
-        else:
-            pass
 
     rss_string = ET.tostring(rss_feed, encoding="utf-8", method="xml")
 
