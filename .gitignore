@@ -195,3 +195,4 @@ cython_debug/
 
 # JSON files from Speedrun.com
 data/*.json
+.DS_Store
